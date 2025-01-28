@@ -263,9 +263,4 @@ body {
         line-height: 1.2;
     }
 
-    .company-cards-container {
-
-        margin: min(-93vh, -300px) auto 0;
-
-    }
 }
