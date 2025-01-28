@@ -11,7 +11,7 @@
 }
 
 body {
-    background-color: #000;
+    background-color: #0A0A0A;
     color: #fff;
     line-height: 1.6;
 }
@@ -54,6 +54,23 @@ body {
 }
 
 /* Cards Section */
+.company-cards-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    max-width: 1400px;
+    margin: min(-75vh, -300px) auto 0;
+    padding: 0;
+    position: relative;
+    z-index: 2;
+}
+.company-card {
+    transition: none !important;
+}
+.company-card:hover {
+    transform: none !important;
+}
+
 .cards-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -174,6 +191,11 @@ body {
 
 .contact-links a:hover {
     color: #fff;
+}
+
+.footer a{
+    color: #fff;
+    text-decoration: none;
 }
 
 .footer-bottom {
