@@ -59,7 +59,7 @@ body {
     grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
     max-width: 1100px;
-    margin: min(-75vh, -300px) auto 0;
+    margin: min(-85vh, -300px) auto 0;
     padding: 0;
     position: relative;
     z-index: 2;
@@ -253,5 +253,19 @@ body {
     
     .cards-container {
         margin-top: -100px;
+    }
+
+
+    .card h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 1rem 0;
+        line-height: 1.2;
+    }
+
+    .company-cards-container {
+
+        margin: min(-93vh, -300px) auto 0;
+
     }
 }
