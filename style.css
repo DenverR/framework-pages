@@ -81,6 +81,7 @@ body {
     padding: 0;
     position: relative;
     z-index: 2;
+    border: 1px solid #00000021;
 }
 
 .card {
