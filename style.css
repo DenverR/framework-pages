@@ -63,6 +63,7 @@ body {
     padding: 0;
     position: relative;
     z-index: 2;
+    border: 1px solid rgba(0, 0, 0, 0.12);
 }
 .company-card {
     transition: none !important;
@@ -72,16 +73,19 @@ body {
     transform: none !important;
 }
 
+.cards-container.blog-list {
+    margin: min(-60vh, -300px) auto 2rem;
+}
+
 .cards-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     max-width: 1400px;
-    margin: min(-45vh, -300px) auto 0;
+    margin: min(-45vh, -300px) auto 2rem;
     padding: 0;
     position: relative;
     z-index: 2;
-    border: 1px solid #00000021;
 }
 
 .card {
@@ -93,6 +97,7 @@ body {
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.12);
+
 }
 
 .card:hover {
@@ -249,7 +254,7 @@ body {
         text-align: center;
     }
     .hero-content {
-        top: 25%;
+        top: 20%;
         padding: 0 1rem;
     }
     
