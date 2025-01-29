@@ -22,7 +22,6 @@ body {
     background: url('img/bg-noise-q-lg-reduced.jpg') center/cover;
     position: relative;
     display: flex;
-    align-items: top;
     padding: 0 2rem;
 }
 
