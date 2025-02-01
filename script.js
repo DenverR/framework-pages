@@ -89,3 +89,22 @@ function updateProgressBar() {
 // Add scroll event listener for progress bar
 window.addEventListener('scroll', updateProgressBar);
 window.addEventListener('resize', updateProgressBar);
+
+// Add this to your JavaScript
+// Fade in elements as they come into view
+function handleScrollAnimation() {
+    const elements = document.querySelectorAll('.company-card p, .company-card h3');
+    
+    elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementBottom = element.getBoundingClientRect().bottom;
+        
+        if (elementTop < window.innerHeight - 20 && elementBottom >= 0) {
+            element.classList.add('visible');
+        }
+    });
+}
+
+window.addEventListener('scroll', handleScrollAnimation);
+// Initial check for elements in view
+handleScrollAnimation();

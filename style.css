@@ -183,7 +183,7 @@ body {
 }
 
 .company-card blockquote.historical::before {
-    content: "Historical Example";
+    content: "Historical Examples";
     position: absolute;
     top: 0.75rem;
     left: 2rem;
@@ -531,4 +531,65 @@ body {
     width: 0%;
     background-color: #a3a5a3;
     transition: width 0.1s ease;
+}
+@media (max-width: 768px) {
+    .blog-layout {
+        grid-template-columns: 1fr;
+        padding: 0;  /* Remove padding here since we'll handle it in the card */
+    }
+
+    .company-card {
+        padding: 1.5rem !important;  /* Reduce padding on mobile */
+    }
+
+    .company-card p {
+        font-size: 1.125rem;  /* Maintain readable font size */
+        line-height: 1.75;
+        margin: 1.5rem 0;
+        max-width: 100%;  /* Allow text to use full width */
+    }
+
+    /* Handle nested content */
+    .company-card blockquote {
+        margin: 2rem -1.5rem;  /* Negative margin to break out of padding */
+        padding: 1.5rem;
+    }
+
+    .company-card blockquote.historical {
+        padding-top: 3rem;  /* Extra space for the label */
+    }
+
+    /* Adjust list padding */
+    .company-card ul, 
+    .company-card ol {
+        padding-left: 1.5rem;  /* Reduce list indent on mobile */
+    }
+
+    /* Make images full width */
+    .company-card img {
+        /*margin: 2rem -1.5rem;  Break out of padding */
+        /*max-width: calc(100% + 3rem);  Compensate for negative margins */
+        width: calc(100% + 3rem);
+    }
+}
+
+/* Add larger screen optimizations */
+@media (min-width: 769px) {
+    .company-card p {
+        max-width: 68ch;  /* Optimal line length for readability */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Add a subtle fade-in animation for content as you scroll */
+.company-card p, .company-card h3 {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.company-card p.visible, .company-card h3.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
