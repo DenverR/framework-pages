@@ -635,8 +635,8 @@ body {
     font-weight: 700;
     line-height: 1.4;
     color: #1a1a1a;
-    padding: 2rem 0;
+    background-color: #eee;
+    padding: 2rem 1rem;
     margin: 2rem 0;
-    border-top: 2px solid #eee;
-    border-bottom: 2px solid #eee;
+    border: 2px solid #eee;
 }
