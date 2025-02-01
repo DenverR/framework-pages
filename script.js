@@ -68,3 +68,24 @@ window.addEventListener('scroll', () => {
         wordmark.src = 'img/wordmark-white-svg.svg';
     }
 });
+// Reading progress bar
+function updateProgressBar() {
+    const progressBar = document.querySelector('#progressBar');
+    const articleContent = document.querySelector('.company-card');
+    const scrollTop = window.scrollY;
+    const scrollHeight = articleContent.offsetHeight;
+    const clientHeight = document.documentElement.clientHeight;
+    
+    // Calculate scroll progress percentage
+    const scrollPercentage = (scrollTop / (scrollHeight - clientHeight)) * 100;
+    
+    // Ensure the progress bar doesn't exceed 100%
+    const progress = Math.min(scrollPercentage, 100);
+    
+    // Update progress bar width
+    progressBar.style.width = `${progress}%`;
+}
+
+// Add scroll event listener for progress bar
+window.addEventListener('scroll', updateProgressBar);
+window.addEventListener('resize', updateProgressBar);
