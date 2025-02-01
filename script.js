@@ -90,19 +90,21 @@ function updateProgressBar() {
 window.addEventListener('scroll', updateProgressBar);
 window.addEventListener('resize', updateProgressBar);
 
-// Slightly adjusted intersection point
+// Only run animation logic on mobile
 function handleScrollAnimation() {
-    const elements = document.querySelectorAll('.company-card p, .company-card h3');
-    
-    elements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementBottom = element.getBoundingClientRect().bottom;
+    // Check if we're on mobile
+    if (window.innerWidth <= 768) {
+        const elements = document.querySelectorAll('.company-card p, .company-card h3');
         
-        // Trigger animation slightly earlier
-        if (elementTop < window.innerHeight - 50 && elementBottom >= 0) {
-            element.classList.add('visible');
-        }
-    });
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementBottom = element.getBoundingClientRect().bottom;
+            
+            if (elementTop < window.innerHeight - 50 && elementBottom >= 0) {
+                element.classList.add('visible');
+            }
+        });
+    }
 }
 
 // Add debouncing to prevent too frequent updates
@@ -116,5 +118,8 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Initial check for elements in view
+// Also check on resize in case window width changes
+window.addEventListener('resize', handleScrollAnimation);
+
+// Initial check
 handleScrollAnimation();

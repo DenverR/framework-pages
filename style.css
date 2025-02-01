@@ -582,16 +582,18 @@ body {
     }
 }
 
-/* More subtle fade-in animation */
-.company-card p, .company-card h3 {
-    opacity: 0.85;  /* Start closer to visible */
-    transform: translateY(10px);  /* Reduce distance */
-    transition: opacity 0.8s ease, transform 0.8s ease;  /* Slower, smoother transition */
-}
+/* Only apply fade-in animation on mobile */
+@media (max-width: 768px) {
+    .company-card p, .company-card h3 {
+        opacity: 0.85;
+        transform: translateY(10px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
 
-.company-card p.visible, .company-card h3.visible {
-    opacity: 1;
-    transform: translateY(0);
+    .company-card p.visible, .company-card h3.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Styling for new elements */
