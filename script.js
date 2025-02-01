@@ -90,8 +90,7 @@ function updateProgressBar() {
 window.addEventListener('scroll', updateProgressBar);
 window.addEventListener('resize', updateProgressBar);
 
-// Add this to your JavaScript
-// Fade in elements as they come into view
+// Slightly adjusted intersection point
 function handleScrollAnimation() {
     const elements = document.querySelectorAll('.company-card p, .company-card h3');
     
@@ -99,12 +98,23 @@ function handleScrollAnimation() {
         const elementTop = element.getBoundingClientRect().top;
         const elementBottom = element.getBoundingClientRect().bottom;
         
-        if (elementTop < window.innerHeight - 20 && elementBottom >= 0) {
+        // Trigger animation slightly earlier
+        if (elementTop < window.innerHeight - 50 && elementBottom >= 0) {
             element.classList.add('visible');
         }
     });
 }
 
-window.addEventListener('scroll', handleScrollAnimation);
+// Add debouncing to prevent too frequent updates
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+    if (scrollTimeout) {
+        window.cancelAnimationFrame(scrollTimeout);
+    }
+    scrollTimeout = window.requestAnimationFrame(() => {
+        handleScrollAnimation();
+    });
+});
+
 // Initial check for elements in view
 handleScrollAnimation();

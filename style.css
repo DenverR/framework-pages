@@ -582,14 +582,59 @@ body {
     }
 }
 
-/* Add a subtle fade-in animation for content as you scroll */
+/* More subtle fade-in animation */
 .company-card p, .company-card h3 {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    opacity: 0.85;  /* Start closer to visible */
+    transform: translateY(10px);  /* Reduce distance */
+    transition: opacity 0.8s ease, transform 0.8s ease;  /* Slower, smoother transition */
 }
 
 .company-card p.visible, .company-card h3.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Styling for new elements */
+.article-meta {
+    margin: 1rem 0 2rem;
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.reading-time {
+    margin-right: 1rem;
+}
+
+.table-of-contents {
+    background: #f8f8f8;
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    border-radius: 4px;
+}
+
+.table-of-contents h4 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.table-of-contents ul {
+    list-style: none;
+    padding: 0;
+}
+
+.table-of-contents a {
+    color: #1a1a1a;
+    text-decoration: none;
+    line-height: 1.8;
+}
+
+.pull-quote {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #1a1a1a;
+    padding: 2rem 0;
+    margin: 2rem 0;
+    border-top: 2px solid #eee;
+    border-bottom: 2px solid #eee;
 }
