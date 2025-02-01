@@ -183,7 +183,7 @@ body {
 }
 
 .company-card blockquote.historical::before {
-    content: "Historical Examples";
+    content: "Historical Example";
     position: absolute;
     top: 0.75rem;
     left: 2rem;
